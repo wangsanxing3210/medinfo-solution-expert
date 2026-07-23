@@ -1,7 +1,7 @@
 # 医疗信息化解决方案专家 · medinfo-solution-expert
 
-> 一个面向医疗信息化行业的解决方案 **编撰 · 审核 · 优化** 全生命周期专家级 WorkBuddy Skill。
-> 内置标准规范库、核心系统知识库、10 大项目场景库、AI 医疗应用场景库与方案审核清单，
+> 一个面向医疗信息化行业的解决方案 **编撰 · 审核 · 优化** 全生命周期专家级 Agent Skill。
+> 兼容 OpenClaw、WorkBuddy 等支持 SKILL.md 规范的 Agent 框架，内置标准规范库、核心系统知识库、10 大项目场景库、AI 医疗应用场景库与方案审核清单，
 > 输出符合国内医疗信息化标准的结构化 Markdown 方案文档。
 
 ---
@@ -51,7 +51,7 @@
 
 ## 💡 使用示例
 
-直接在 WorkBuddy 对话中描述需求即可：
+在任意兼容 SKILL.md 的 Agent 对话中描述需求即可：
 
 - "帮我写一份某县人民医院互联互通四级甲等建设方案"
 - "审核一下这份 CDSS 建设方案，看有没有政策或技术风险"
@@ -74,20 +74,30 @@
 
 ## 📦 安装
 
-### 方式一：从 GitHub 导入（WorkBuddy / ClawHub）
+本 Skill 基于通用的 `SKILL.md` 规范，可运行在 OpenClaw、WorkBuddy 等兼容框架上。
 
-复制本仓库地址，在 WorkBuddy 技能管理或 ClawHub 发布页粘贴导入：
+### 方式一：从市场安装
+
+- **ClawHub（OpenClaw 生态）**：打开 https://clawhub.ai → GitHub 登录 → 发布/导入技能 → 粘贴本仓库地址
+- **WorkBuddy SkillHub**：打开 https://cnb.cool/skills → 登录并实名认证 → 发布技能 → 上传本仓库 SKILL.md
+
+### 方式二：从 GitHub 导入
+
+复制本仓库地址，在对应框架的技能管理页粘贴导入：
 
 ```
 https://github.com/wangsanxing3210/medinfo-solution-expert
 ```
 
-### 方式二：手动放置
+### 方式三：手动放置（user-level，全局生效）
 
-将本仓库克隆到 user-level skills 目录即可全局生效：
+将本仓库克隆到 Agent 的 skills 目录即可：
 
 ```bash
+# OpenClaw / WorkBuddy 等默认 user-level 路径
 git clone https://github.com/wangsanxing3210/medinfo-solution-expert ~/.workbuddy/skills/medinfo-solution-expert
+
+# 若你的框架使用其他 skills 根目录，克隆到对应位置后重命名为 medinfo-solution-expert 即可
 ```
 
 ## 📌 版本
