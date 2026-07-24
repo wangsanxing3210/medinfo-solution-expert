@@ -1,6 +1,6 @@
 ---
 name: medinfo-solution-expert
-version: 1.1.0
+version: 1.2.0
 description: 医疗信息化解决方案编撰、审核、优化专家级 Agent Skill（兼容 OpenClaw / WorkBuddy 等框架）。覆盖智慧医院、互联互通测评、医共体、电子病历/智慧医疗评级、中心药房、云审方、连锁民营医院、基层医疗机构及 HIS/EMR/LIS/PACS/HRP/集成平台等场景。内置标准规范库、核心系统知识库、10 大场景库、AI 医疗应用库与方案审核清单，输出符合国内医疗信息化标准的结构化 Markdown 方案文档。
 agent_created: true
 ---
@@ -43,6 +43,7 @@ agent_created: true
 - 涉及医院评级（互联互通、EMR 分级、智慧服务、智慧管理）的方案
 - 涉及医共体 / 医联体 / 城市医疗集团建设的方案
 - 涉及中心药房、云审方中心、连锁民营医院、基层医疗机构数智化的方案
+- 涉及 DRG/DIP 2.0 医保支付改革、医保智能审核、病案首页质控、医院精细化运营的方案
 - 涉及 AI 在医疗场景落地的方案
 
 ## 工作流程
@@ -171,12 +172,15 @@ agent_created: true
 | 编撰中心药房方案 | scenarios.md + central-pharmacy.md | solution-template.md |
 | 编撰云审方方案 | scenarios.md + cloud-prescription.md | solution-template.md |
 | 编撰药学一体化方案 | scenarios.md + central-pharmacy.md + cloud-prescription.md | solution-template.md |
+| 编撰 DRG/DIP 方案 | scenarios.md + drg-dip.md | solution-template.md |
 | 审核方案 | standards.md + systems.md + scenarios.md + ai-applications.md + audit-checklist.md | — |
 | 优化方案 | audit-checklist.md + scenarios.md | — |
 
 加载策略：每次任务前，按表格选择性加载相关 references。不要全部加载以节省上下文。
 
 ## 流程示例（Few-shot）
+
+为降低产出差异、提升稳定性，以下给出三类核心流程的输入/输出样例。更多场景维度的示例（8 类编撰 + 2 类审核 + 2 类优化）见 `assets/few-shot-examples.md`；完整脱敏方案样例见 `assets/sample-solutions.md`。
 
 为降低产出差异、提升稳定性，以下给出三类流程的输入/输出样例。
 
@@ -248,6 +252,7 @@ agent_created: true
 | `central-pharmacy.md` | 中心药房专项库（业务模型/数据/接口/厂商/合规/踩坑） | 涉及中心药房、处方流转、药品追溯时加载 |
 | `cloud-prescription.md` | 云审方中心专项库（规则引擎/知识库/智能审方/部署/厂商/踩坑） | 涉及前置审方、云审方、合理用药时加载 |
 | `ai-applications.md` | AI 医疗应用场景库 | 方案含 AI 时必读 |
+| `drg-dip.md` | DRG/DIP 2.0 专项库（分组方案/业务模型/落地模块/接口/厂商/合规/踩坑） | 涉及医保支付改革、DRG/DIP、精细化运营时加载 |
 | `audit-checklist.md` | 方案审核清单 | 审核流程必读 |
 
 ### assets/
@@ -255,3 +260,5 @@ agent_created: true
 | 文件 | 用途 | 何时使用 |
 |------|------|---------|
 | `solution-template.md` | 方案文档 Markdown 模板 | 编撰流程第 10 步使用 |
+| `few-shot-examples.md` | 多场景编撰/审核/优化输入-输出示例库 | 编撰/审核/优化前按需加载，提升稳定性 |
+| `sample-solutions.md` | 脱敏完整方案样例（县域医共体/互联互通） | 展示结构与写法，编撰时参考 |
