@@ -1,7 +1,7 @@
 ---
 name: medinfo-solution-expert
-version: 1.2.0
-description: 医疗信息化解决方案编撰、审核、优化专家级 Agent Skill（兼容 OpenClaw / WorkBuddy 等框架）。覆盖智慧医院、互联互通测评、医共体、电子病历/智慧医疗评级、中心药房、云审方、连锁民营医院、基层医疗机构及 HIS/EMR/LIS/PACS/HRP/集成平台等场景。内置标准规范库、核心系统知识库、10 大场景库、AI 医疗应用库与方案审核清单，输出符合国内医疗信息化标准的结构化 Markdown 方案文档。
+version: 1.3.0
+description: 医疗信息化解决方案编撰、审核、优化专家级 Agent Skill（兼容 OpenClaw / WorkBuddy 等框架）。覆盖智慧医院、互联互通测评、医共体、电子病历/智慧医疗评级、中心药房、云审方、连锁民营医院、基层医疗机构及 HIS/EMR/LIS/PACS/HRP/集成平台等场景。内置标准规范库、核心系统知识库、10 大场景库、AI 医疗应用库、方案审核清单与自检预评分能力，输出符合国内医疗信息化标准的结构化 Markdown 方案文档。
 agent_created: true
 ---
 
@@ -45,6 +45,7 @@ agent_created: true
 - 涉及中心药房、云审方中心、连锁民营医院、基层医疗机构数智化的方案
 - 涉及 DRG/DIP 2.0 医保支付改革、医保智能审核、病案首页质控、医院精细化运营的方案
 - 涉及 AI 在医疗场景落地的方案
+- 自检 / 预评分 / 跑一遍审核清单 / 检查方案质量 / 给方案打分（对任意已编撰方案或本技能生成方案执行一键自检并输出预评分）
 
 ## 工作流程
 
@@ -163,6 +164,18 @@ agent_created: true
 - 优化建议必须具体可执行，给出修改前 / 修改后对比
 - 量化指标必须有依据，不杜撰
 
+### 流程四：方案自检与预评分（Self-Check）
+
+完成「流程一 · 方案编撰」第 10 步输出后，**自动**对刚生成的方案执行一次自检；亦支持对任意已存在方案单独触发（用户输入"自检 / 预评分 / 跑一遍审核清单 / 检查方案质量"）。
+
+执行步骤：
+1. 加载 `references/audit-checklist.md` 的全部检查项（含第八章 AI 专项——当且仅当方案含 AI 应用时启用）。
+2. 逐项判定 ✅ / ⚠️ / ❌，按 `audit-checklist.md` 第九节「方案预评分与自检报告」的计分规则计算各维度得分与加权总分。
+3. 按第九节报告模板输出「方案自检报告（预评分）」，含总分、等第、维度得分、问题清单（高 / 中 / 低优先级）与整改后重检建议。
+4. 给出"建议是否可直接提交 / 进入下一环节"的结论。
+
+> 自检本质上就是一次轻量级审核（流程二），区别在于：① 编撰后自动跑、② 输出带加权预评分与等第、③ 聚焦"能否提交"的快速判定。计分规则与模板已固化在 `references/audit-checklist.md` 第九节，无需重新设计。
+
 ## 知识库引用
 
 | 任务 | 需要加载的 references | 需要使用的 assets |
@@ -174,6 +187,7 @@ agent_created: true
 | 编撰药学一体化方案 | scenarios.md + central-pharmacy.md + cloud-prescription.md | solution-template.md |
 | 编撰 DRG/DIP 方案 | scenarios.md + drg-dip.md | solution-template.md |
 | 审核方案 | standards.md + systems.md + scenarios.md + ai-applications.md + audit-checklist.md | — |
+| 方案自检 / 预评分 | audit-checklist.md（第九节） | — |
 | 优化方案 | audit-checklist.md + scenarios.md | — |
 
 加载策略：每次任务前，按表格选择性加载相关 references。不要全部加载以节省上下文。
@@ -253,7 +267,7 @@ agent_created: true
 | `cloud-prescription.md` | 云审方中心专项库（规则引擎/知识库/智能审方/部署/厂商/踩坑） | 涉及前置审方、云审方、合理用药时加载 |
 | `ai-applications.md` | AI 医疗应用场景库 | 方案含 AI 时必读 |
 | `drg-dip.md` | DRG/DIP 2.0 专项库（分组方案/业务模型/落地模块/接口/厂商/合规/踩坑） | 涉及医保支付改革、DRG/DIP、精细化运营时加载 |
-| `audit-checklist.md` | 方案审核清单 | 审核流程必读 |
+| `audit-checklist.md` | 方案审核清单 + AI 专项 + 审核报告模板 + 预评分与自检报告机制（编撰后自动自检） | 审核 / 自检流程必读 |
 
 ### assets/
 
@@ -261,4 +275,4 @@ agent_created: true
 |------|------|---------|
 | `solution-template.md` | 方案文档 Markdown 模板 | 编撰流程第 10 步使用 |
 | `few-shot-examples.md` | 多场景编撰/审核/优化输入-输出示例库 | 编撰/审核/优化前按需加载，提升稳定性 |
-| `sample-solutions.md` | 脱敏完整方案样例（县域医共体/互联互通） | 展示结构与写法，编撰时参考 |
+| `sample-solutions.md` | 10 大场景脱敏完整方案样例（各场景一份） | 展示结构与写法，编撰时参考 |
