@@ -130,7 +130,7 @@ git clone https://github.com/wangsanxing3210/medinfo-solution-expert ~/.workbudd
 
 ## 📌 版本
 
-v1.6.0
+v1.6.1
 
 ## 📄 许可
 
