@@ -59,10 +59,10 @@
 | `references/xinchuang.md` | 信创 / 国产化专项：政策边界、国产替代清单（芯片/OS/数据库/中间件/办公/云）、国密、迁移策略、方案写法与自查点 |
 | `references/investment-estimation.md` | 投资估算量化参考：分场景量级区间、投资构成拆分、写法示例与审计追问应答 |
 | `references/bidding.md` | 招投标应答 + 方案选型对比：评标办法拆解、需求响应矩阵/偏离表、选型维度框架、对比表与结论模板 |
-| `assets/solution-template.md` | 标准 Markdown 方案模板（文档摘要 + 11 个正文章节，共 12 个一级标题） |
+| `assets/solution-template.md` | 标准 Markdown 方案模板（文档摘要 + 目录 + 11 个正文章节，共 13 个一级标题，末尾可选附录） |
 | `assets/few-shot-examples.md` | 扩展示例库：8 类场景编撰 + 2 类审核 + 2 类优化输入-输出示范 |
 | `assets/conversation-examples.md` | 多轮对话示例库：模糊澄清 / 审核转优化 / 边界降级 / 多场景混合 / AI 合规补全 5 类完整调用链路 |
-| `assets/sample-solutions.md` | 10 大核心场景脱敏完整方案样例，展示结构与写法 |
+| `assets/sample-solutions.md` | 19 大场景脱敏完整方案样例（每场景一份），展示结构与写法 |
 
 ## 🔑 触发词（在对话中输入即可自动激活）
 
@@ -133,7 +133,7 @@ git clone https://github.com/wangsanxing3210/medinfo-solution-expert ~/.workbudd
 
 ## 📌 版本
 
-v1.6.2
+v1.6.3
 
 ## 📄 许可
 
