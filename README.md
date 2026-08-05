@@ -70,6 +70,7 @@
 | `assets/few-shot-examples.md` | 扩展示例库：8 类场景编撰 + 2 类审核 + 2 类优化输入-输出示范 |
 | `assets/conversation-examples.md` | 多轮对话示例库：模糊澄清 / 审核转优化 / 边界降级 / 多场景混合 / AI 合规补全 5 类完整调用链路 |
 | `assets/sample-solutions.md` | 19 大场景脱敏完整方案样例（每场景一份），展示结构与写法 |
+| `assets/official-docx-format.md` | 公文格式 .docx 输出规范（GB/T 9704-2012 简化版）：页面/页边距/字体字号/标题层级映射/转换方法/转换后核对清单 |
 
 ## 🔑 触发词（在对话中输入即可自动激活）
 
@@ -140,7 +141,7 @@ git clone https://github.com/wangsanxing3210/medinfo-solution-expert ~/.workbudd
 
 ## 📌 版本
 
-v1.6.4
+v1.6.5
 
 **变更历史**：见 [CHANGELOG.md](CHANGELOG.md)，了解每版新增能力、修复点与 SkillHub 升级指引。
 
