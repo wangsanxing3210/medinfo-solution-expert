@@ -141,7 +141,7 @@ git clone https://github.com/wangsanxing3210/medinfo-solution-expert ~/.workbudd
 
 ## 📌 版本
 
-v1.6.6
+v1.7.0
 
 **变更历史**：见 [CHANGELOG.md](CHANGELOG.md)，了解每版新增能力、修复点与 SkillHub 升级指引。
 
