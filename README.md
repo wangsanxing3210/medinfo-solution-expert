@@ -79,7 +79,7 @@
 | `assets/sample-solutions.md` | 19 大场景脱敏完整方案样例（每场景一份），展示结构与写法 |
 | `assets/official-docx-format.md` | 公文格式 .docx 输出规范（GB/T 9704-2012 简化版）：页面/页边距/字体字号/标题层级映射/转换方法/转换后核对清单/待填写与待核实标红 |
 | `assets/solution-ppt-spec.md` | 解决方案 PPT 编撰与排版规范：页面结构（封面/目录/章节页/内容页/结尾）、版式配色、演讲备注四要素、转换方法、自查清单 |
-| `assets/support-qrcode.png` | 作者微信收款码（自愿赞赏用），仅在对话末尾附一次，不进入交付物 |
+| `assets/support-qrcode.md` | 自愿赞赏码**素材库**：话术边界 + 三种载体（矢量 SVG 二维码 / 图片链接 / 内容文本）。矢量码为纯文本、大小仅数 KB、可离线渲染并无损放大，仅在对话末尾附一次，不进入交付物 |
 
 ## 🔑 触发词（在对话中输入即可自动激活）
 
@@ -159,7 +159,7 @@ git clone https://github.com/wangsanxing3210/medinfo-solution-expert ~/.workbudd
 
 ## 📌 版本
 
-v1.9.1
+v1.9.2
 
 **变更历史**：见 [CHANGELOG.md](CHANGELOG.md)，了解每版新增能力、修复点与 SkillHub 升级指引。
 
